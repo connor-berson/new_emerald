@@ -39,84 +39,75 @@ static void ClearSpritesBattlerHealthboxAnimData(void);
 
 // const rom data
 static const struct CompressedSpriteSheet sSpriteSheet_SinglesPlayerHealthbox =
-{
-    gHealthboxSinglesPlayerGfx, 0x1000, TAG_HEALTHBOX_PLAYER1_TILE
-};
+    {
+        gHealthboxSinglesPlayerGfx, 0x1000, TAG_HEALTHBOX_PLAYER1_TILE};
 
 static const struct CompressedSpriteSheet sSpriteSheet_SinglesOpponentHealthbox =
-{
-    gHealthboxSinglesOpponentGfx, 0x1000, TAG_HEALTHBOX_OPPONENT1_TILE
-};
+    {
+        gHealthboxSinglesOpponentGfx, 0x1000, TAG_HEALTHBOX_OPPONENT1_TILE};
 
 static const struct CompressedSpriteSheet sSpriteSheets_DoublesPlayerHealthbox[2] =
-{
-    {gHealthboxDoublesPlayerGfx, 0x800, TAG_HEALTHBOX_PLAYER1_TILE},
-    {gHealthboxDoublesPlayerGfx, 0x800, TAG_HEALTHBOX_PLAYER2_TILE}
-};
+    {
+        {gHealthboxDoublesPlayerGfx, 0x800, TAG_HEALTHBOX_PLAYER1_TILE},
+        {gHealthboxDoublesPlayerGfx, 0x800, TAG_HEALTHBOX_PLAYER2_TILE}};
 
 static const struct CompressedSpriteSheet sSpriteSheets_DoublesOpponentHealthbox[2] =
-{
-    {gHealthboxDoublesOpponentGfx, 0x800, TAG_HEALTHBOX_OPPONENT1_TILE},
-    {gHealthboxDoublesOpponentGfx, 0x800, TAG_HEALTHBOX_OPPONENT2_TILE}
-};
+    {
+        {gHealthboxDoublesOpponentGfx, 0x800, TAG_HEALTHBOX_OPPONENT1_TILE},
+        {gHealthboxDoublesOpponentGfx, 0x800, TAG_HEALTHBOX_OPPONENT2_TILE}};
 
 static const struct CompressedSpriteSheet sSpriteSheet_SafariHealthbox =
-{
-    gHealthboxSafariGfx, 0x1000, TAG_HEALTHBOX_SAFARI_TILE
-};
+    {
+        gHealthboxSafariGfx, 0x1000, TAG_HEALTHBOX_SAFARI_TILE};
 
 static const struct CompressedSpriteSheet sSpriteSheets_HealthBar[MAX_BATTLERS_COUNT] =
-{
-    {gBlankGfxCompressed, 0x0100, TAG_HEALTHBAR_PLAYER1_TILE},
-    {gBlankGfxCompressed, 0x0120, TAG_HEALTHBAR_OPPONENT1_TILE},
-    {gBlankGfxCompressed, 0x0100, TAG_HEALTHBAR_PLAYER2_TILE},
-    {gBlankGfxCompressed, 0x0120, TAG_HEALTHBAR_OPPONENT2_TILE}
-};
+    {
+        {gBlankGfxCompressed, 0x0100, TAG_HEALTHBAR_PLAYER1_TILE},
+        {gBlankGfxCompressed, 0x0120, TAG_HEALTHBAR_OPPONENT1_TILE},
+        {gBlankGfxCompressed, 0x0100, TAG_HEALTHBAR_PLAYER2_TILE},
+        {gBlankGfxCompressed, 0x0120, TAG_HEALTHBAR_OPPONENT2_TILE}};
 
 const struct SpritePalette sSpritePalettes_HealthBoxHealthBar[2] =
-{
-    {gBattleInterface_BallStatusBarPal, TAG_HEALTHBOX_PAL},
-    {gBattleInterface_BallDisplayPal, TAG_HEALTHBAR_PAL}
-};
+    {
+        {gBattleInterface_BallStatusBarPal, TAG_HEALTHBOX_PAL},
+        {gBattleInterface_BallDisplayPal, TAG_HEALTHBAR_PAL}};
 
 const struct CompressedSpriteSheet gSpriteSheet_EnemyShadow =
-{
-    .data = gEnemyMonShadow_Gfx, .size = 0x80, .tag = TAG_SHADOW_TILE
-};
+    {
+        .data = gEnemyMonShadow_Gfx, .size = 0x80, .tag = TAG_SHADOW_TILE};
 
 const struct CompressedSpriteSheet gSpriteSheet_EnemyShadowsSized =
-{
-    .data = gEnemyMonShadowsSized_Gfx,
-    .size = TILE_SIZE_4BPP * 8 * 4, // 8 tiles per sprite, 4 sprites total
-    .tag = TAG_SHADOW_TILE,
+    {
+        .data = gEnemyMonShadowsSized_Gfx,
+        .size = TILE_SIZE_4BPP * 8 * 4, // 8 tiles per sprite, 4 sprites total
+        .tag = TAG_SHADOW_TILE,
 };
 
 static const struct OamData sOamData_EnemyShadow =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(32x8),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(32x8),
-    .tileNum = 0,
-    .priority = 3,
-    .paletteNum = 0,
-    .affineParam = 0
-};
+    {
+        .y = 0,
+        .affineMode = ST_OAM_AFFINE_OFF,
+        .objMode = ST_OAM_OBJ_NORMAL,
+        .mosaic = FALSE,
+        .bpp = ST_OAM_4BPP,
+        .shape = SPRITE_SHAPE(32x8),
+        .x = 0,
+        .matrixNum = 0,
+        .size = SPRITE_SIZE(32x8),
+        .tileNum = 0,
+        .priority = 3,
+        .paletteNum = 0,
+        .affineParam = 0};
 
 const struct SpriteTemplate gSpriteTemplate_EnemyShadow =
-{
-    .tileTag = TAG_SHADOW_TILE,
-    .paletteTag = TAG_SHADOW_PAL,
-    .oam = &sOamData_EnemyShadow,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
+    {
+        .tileTag = TAG_SHADOW_TILE,
+        .paletteTag = TAG_SHADOW_PAL,
+        .oam = &sOamData_EnemyShadow,
+        .anims = gDummySpriteAnimTable,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
 };
 
 // code
@@ -150,16 +141,16 @@ u16 ChooseMoveAndTargetInBattlePalace(u32 battler)
     u8 unusableMovesBits = CheckMoveLimitations(battler, 0, MOVE_LIMITATIONS_ALL);
     s32 percent = Random() % 100;
 
-    // Heavy variable re-use here makes this hard to read without defines
-    // Possibly just optimization? might still match with additional vars
-    #define maxGroupNum var1
-    #define minGroupNum var2
-    #define selectedGroup percent
-    #define selectedMoves var2
-    #define moveTarget var1
-    #define numMovesPerGroup var1
-    #define numMultipleMoveGroups var2
-    #define randSelectGroup var2
+// Heavy variable re-use here makes this hard to read without defines
+// Possibly just optimization? might still match with additional vars
+#define maxGroupNum var1
+#define minGroupNum var2
+#define selectedGroup percent
+#define selectedMoves var2
+#define moveTarget var1
+#define numMovesPerGroup var1
+#define numMultipleMoveGroups var2
+#define randSelectGroup var2
 
     // If battler is < 50% HP and not asleep, use second set of move group likelihoods
     // otherwise use first set
@@ -239,7 +230,6 @@ u16 ChooseMoveAndTargetInBattlePalace(u32 battler)
             if ((numMovesPerGroup & (0xF << 4)) >= (2 << 8))
 #endif
                 numMultipleMoveGroups++;
-
 
             // By this point we already know the battler only has usable moves from at most 2 of the 3 move groups,
             // because they had no usable moves from the move group that was selected based on Nature.
@@ -496,14 +486,11 @@ bool8 TryHandleLaunchBattleTableAnimation(u8 activeBattler, u8 atkBattler, u8 de
 {
     u8 taskId;
 
-    if (gBattleSpritesDataPtr->battlerData[activeBattler].behindSubstitute
-        && !ShouldAnimBeDoneRegardlessOfSubstitute(tableId))
+    if (gBattleSpritesDataPtr->battlerData[activeBattler].behindSubstitute && !ShouldAnimBeDoneRegardlessOfSubstitute(tableId))
     {
         return TRUE;
     }
-    if (gBattleSpritesDataPtr->battlerData[activeBattler].behindSubstitute
-        && tableId == B_ANIM_SUBSTITUTE_FADE
-        && gSprites[gBattlerSpriteIds[activeBattler]].invisible)
+    if (gBattleSpritesDataPtr->battlerData[activeBattler].behindSubstitute && tableId == B_ANIM_SUBSTITUTE_FADE && gSprites[gBattlerSpriteIds[activeBattler]].invisible)
     {
         LoadBattleMonGfxAndAnimate(activeBattler, TRUE, gBattlerSpriteIds[activeBattler]);
         ClearBehindSubstituteBit(activeBattler);
@@ -1067,32 +1054,7 @@ void ClearBehindSubstituteBit(u8 battler)
 
 void HandleLowHpMusicChange(struct Pokemon *mon, u8 battler)
 {
-    u16 hp = GetMonData(mon, MON_DATA_HP);
-    u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
-
-    if (GetHPBarLevel(hp, maxHP) == HP_BAR_RED)
-    {
-        if (!gBattleSpritesDataPtr->battlerData[battler].lowHpSong)
-        {
-            if (!gBattleSpritesDataPtr->battlerData[BATTLE_PARTNER(battler)].lowHpSong)
-                PlaySE(SE_LOW_HEALTH);
-            gBattleSpritesDataPtr->battlerData[battler].lowHpSong = 1;
-        }
-    }
-    else
-    {
-        gBattleSpritesDataPtr->battlerData[battler].lowHpSong = 0;
-        if (!IsDoubleBattle())
-        {
-            m4aSongNumStop(SE_LOW_HEALTH);
-            return;
-        }
-        if (IsDoubleBattle() && !gBattleSpritesDataPtr->battlerData[BATTLE_PARTNER(battler)].lowHpSong)
-        {
-            m4aSongNumStop(SE_LOW_HEALTH);
-            return;
-        }
-    }
+    return;
 }
 
 void BattleStopLowHpSound(void)
@@ -1152,12 +1114,12 @@ void SetBattlerSpriteAffineMode(u8 affineMode)
     }
 }
 
-#define tBattlerId   data[0]
-#define tSpriteSide  data[1]
+#define tBattlerId data[0]
+#define tSpriteSide data[1]
 #define tBaseTileNum data[2]
 
-#define SPRITE_SIDE_LEFT    0
-#define SPRITE_SIDE_RIGHT   1
+#define SPRITE_SIDE_LEFT 0
+#define SPRITE_SIDE_RIGHT 1
 
 void CreateEnemyShadowSprite(u32 battler)
 {
@@ -1272,8 +1234,8 @@ void SpriteCB_EnemyShadow(struct Sprite *shadowSprite)
         size = gSpeciesInfo[transformSpecies].enemyShadowSize;
 
         invisible = (B_ENEMY_MON_SHADOW_STYLE >= GEN_4 && P_GBA_STYLE_SPECIES_GFX == FALSE)
-                  ? gSpeciesInfo[transformSpecies].suppressEnemyShadow
-                  : gSpeciesInfo[transformSpecies].enemyMonElevation == 0;
+                        ? gSpeciesInfo[transformSpecies].suppressEnemyShadow
+                        : gSpeciesInfo[transformSpecies].enemyMonElevation == 0;
     }
     else if (B_ENEMY_MON_SHADOW_STYLE >= GEN_4 && P_GBA_STYLE_SPECIES_GFX == FALSE)
     {
@@ -1315,8 +1277,7 @@ void SetBattlerShadowSpriteCallback(u8 battler, u16 species)
             return;
         }
 
-        if (gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary >= MAX_SPRITES
-            || gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary >= MAX_SPRITES)
+        if (gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary >= MAX_SPRITES || gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary >= MAX_SPRITES)
             return;
 
         if (gBattleSpritesDataPtr->battlerData[battler].transformSpecies != SPECIES_NONE)
